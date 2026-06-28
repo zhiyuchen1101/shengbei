@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<title>筊杯 · 潮汕老爷卜卦</title>
+<link rel="stylesheet" href="css/style.css">
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+</script>
+</head>
+<body>
+
+<div class="load-ov" id="loadOv">
+  <div class="load-spin"></div>
+  <div class="load-txt">请筊杯</div>
+  <div class="load-detail">准备中…</div>
+</div>
+
+<div class="app">
+  <div class="title-area">
+    <h1>筊 杯</h1>
+    <div class="sub">潮 汕 老 爷 卜 卦</div>
+  </div>
+  <div class="gods-row" id="godsRow"></div>
+  <div class="god-info" id="godInfo"></div>
+  <div class="guide-area">
+    <div class="guide-text" id="guideText">🙏 心中默念，向上挥手掷筊</div>
+  </div>
+  <div id="scene3d">
+    <div class="result-overlay" id="resultOverlay">
+      <div class="result-card" id="resultCard"></div>
+    </div>
+  </div>
+  <div class="cam-wrap">
+    <div class="cam-hint" id="camHint">📷 等待手势…</div>
+    <div class="cam-box">
+      <video id="webcam" autoplay playsinline muted></video>
+      <canvas id="overlayCv"></canvas>
+    </div>
+  </div>
+  <div class="footer-tip">挥手掷筊 · 点击圣杯 · 空格键</div>
+</div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

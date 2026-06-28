@@ -1,0 +1,65 @@
+/* ═══ 宣纸素雅 — 圣杯卜卦 ═══
+   纸白 #f7f2e7  底    墨色 #3a3226  字
+   淡墨 #8a7e72  次字  木色 #8b6914  圣杯木面
+   朱砂 #c0392b  红面  淡金 #b8a060  边框
+   ══════════════════════════════ */
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:#f7f2e7;color:#3a3226;
+  font-family:"STKaiti","KaiTi","楷体","Noto Serif SC",serif;
+  min-height:100vh;display:flex;justify-content:center;align-items:center;
+  overflow-x:hidden;user-select:none;-webkit-user-select:none;
+}
+.app{display:flex;flex-direction:column;align-items:center;gap:10px;padding:16px;width:100%;max-width:840px}
+
+.title-area{text-align:center}
+.title-area h1{font-size:1.8em;color:#3a3226;letter-spacing:0.3em;font-weight:normal;margin:0}
+.title-area .sub{font-size:0.72em;color:#8a7e72;letter-spacing:0.1em}
+
+.gods-row{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.god-card{display:flex;flex-direction:column;align-items:center;gap:2px;padding:5px 10px;border-radius:6px;cursor:pointer;border:1px solid #d5cfc4;background:#faf7f2;transition:all .25s;min-width:52px}
+.god-card:hover{border-color:#b8a060;background:#f5efe0}
+.god-card.active{border-color:#8b6914;background:#f0e8d0}
+.god-emoji{font-size:1.3em}
+.god-name{font-size:0.64em;color:#8a7e72}
+.god-card.active .god-name{color:#5a4030}
+
+.god-info{max-width:500px;padding:8px 14px;background:#faf7f2;border:1px solid #d5cfc4;border-radius:6px;text-align:center;display:none}
+.god-info.show{display:block}
+.god-info .gi-name{font-size:0.85em;color:#5a4030;margin-bottom:2px}
+.god-info .gi-desc{font-size:0.66em;color:#8a7e72;line-height:1.5}
+.god-info .gi-scene{font-size:0.62em;color:#b0a090;margin-top:2px}
+
+.guide-area{text-align:center;padding:4px}
+.guide-text{font-size:0.78em;color:#8a7e72;transition:color .4s}
+.guide-text.throwing{color:#c0392b}
+
+#scene3d{width:100%;max-width:720px;height:480px;position:relative;overflow:hidden;cursor:pointer;background:#e8e0d5}
+#scene3d canvas{display:block}
+
+.result-overlay{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:5;opacity:0;transition:opacity .4s}
+.result-overlay.show{opacity:1}
+.result-card{background:rgba(255,252,245,0.94);border:1px solid #b8a060;border-radius:4px;padding:16px 20px;text-align:center;max-width:260px;box-shadow:0 4px 20px rgba(0,0,0,0.08)}
+.result-card .ri{font-size:1.8em}
+.result-card .rn{font-size:1.1em;color:#5a4030;letter-spacing:.1em;margin:4px 0}
+.result-card .rg{font-size:0.7em;color:#8a7e72}
+.result-card .rm{font-size:0.8em;line-height:1.7;color:#3a3226;margin:6px 0}
+.result-card .rx{font-size:0.66em;color:#8a7e72;font-style:italic}
+
+.cam-wrap{position:fixed;bottom:14px;left:14px;z-index:99;display:flex;flex-direction:column;gap:4px}
+.cam-hint{font-size:0.6em;color:#8a7e72;background:rgba(255,252,245,0.9);padding:3px 8px;border-radius:3px;text-align:center;border:1px solid #d5cfc4;white-space:nowrap;transition:all .3s}
+.cam-hint.active{color:#c0392b;border-color:#c0392b}
+.cam-box{width:140px;height:105px;border-radius:4px;overflow:hidden;border:1px solid #b8a060;background:#e8e0d5}
+.cam-box video{width:100%;height:100%;object-fit:cover;transform:scaleX(-1)}
+.cam-box canvas{position:absolute;inset:0;width:100%;height:100%;transform:scaleX(-1);pointer-events:none}
+
+.footer-tip{color:#b0a89a;font-size:0.58em;text-align:center;letter-spacing:0.1em}
+
+.load-ov{position:fixed;inset:0;background:#f7f2e7;z-index:200;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;transition:opacity .5s}
+.load-ov.hidden{opacity:0;pointer-events:none}
+.load-spin{width:32px;height:32px;border:2px solid #d5cfc4;border-top-color:#8b6914;border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.load-txt{color:#5a4030;font-size:0.82em;letter-spacing:0.15em}
+.load-detail{color:#8a7e72;font-size:0.62em}
+
+@media(max-width:720px){#scene3d{height:360px}}

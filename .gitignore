@@ -1,0 +1,12 @@
+# 大文件
+hand_landmarker.task
+
+# 诊断文件
+test.html
+
+# 系统
+.DS_Store
+Thumbs.db
+
+# 旧版单文件备份
+index_old*.html
