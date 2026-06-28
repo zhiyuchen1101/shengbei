@@ -13,15 +13,16 @@
 
 ## 🚀 快速开始
 
+**macOS：双击 `启动.command`**，自动下载模型 + 启动服务 + 打开浏览器。
+
+**命令行：**
+
 ```bash
-# 1. 下载手部检测模型（7.5MB）
-bash model/download.sh
-
-# 2. 启动本地服务
-python3 -m http.server 8080
-
-# 3. 浏览器打开
-open http://localhost:8080
+bash start.sh          # 一键：下载模型 + 启服务 + 开浏览器
+# 或手动三步：
+bash model/download.sh # 1. 下载模型
+python3 -m http.server 8080  # 2. 启服务
+open http://localhost:8080   # 3. 打开
 ```
 
 ## 📁 项目结构
