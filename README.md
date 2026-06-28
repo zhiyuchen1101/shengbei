@@ -13,7 +13,7 @@
 
 ## 🚀 快速开始
 
-**macOS 双击 `启动.command`** · **Windows 双击 `启动.bat`**
+**macOS 双击 `start.command`** · **Windows 双击 `start.bat`**
 
 自动下载模型 + 启动服务 + 打开浏览器，一步到位。
 
